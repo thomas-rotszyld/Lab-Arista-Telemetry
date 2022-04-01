@@ -9,16 +9,12 @@
   tasks:
 
     - name: Push RPM Telegraph Package on Arista
-      vars:
-        ansible_connection: network_cli
       ansible.netcommon.net_put:
         src: ./telegraf.rpm
         dest: /mnt/flash
         protocol: scp
 
     - name: Push Telegraf Install Script
-      vars:
-        ansible_connection: network_cli
       ansible.netcommon.net_put:
         src: ./installtelegraf.sh
         dest: /mnt/flash
@@ -26,5 +22,4 @@
 
     - name: Install Telegraf RPM
       arista.eos.eos_command:
-        commands:
-        - show version
+        commands: show version
