@@ -5,6 +5,13 @@
 
   tasks:
 
+    - name: Checking the user name
+      shell: /usr/bin/whoami
+      register: username
+  
+    - name: Debugging the whoami username
+      debug: msg={{ username }}
+
     - name: Push RPM Telegraph Package on Arista
       ansible.builtin.copy:
         src: ./telegraf-1.2.0.i386-test.rpm
