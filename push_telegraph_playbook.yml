@@ -4,6 +4,7 @@
   connection: local
   collections:
     - ansible.netcommon
+    - arista.eos
 
   tasks:
 
@@ -12,3 +13,15 @@
         src: ./telegraf.rpm
         dest: /mnt/flash
         protocol: scp
+
+    - name: Push Telegraf Install Script
+      ansible.netcommon.net_put:
+        src: ./installtelegraf.sh
+        dest: /mnt/flash
+        protocol: scp
+
+    - name: Install Telegraf RPM
+      arista.eos.eos_command:
+        commands:
+        - bash sudo su 
+        - /mnt/flash/installtelegraf.sh
