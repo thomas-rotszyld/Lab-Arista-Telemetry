@@ -22,4 +22,8 @@
 
     - name: Install Telegraf RPM
       arista.eos.eos_command:
+        provider:
+          host: "{{ inventory_hostname }}"
+          username: admin
+          password: admin
         commands: show version
