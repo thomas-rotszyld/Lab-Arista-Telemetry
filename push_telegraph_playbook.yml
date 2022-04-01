@@ -9,6 +9,6 @@
       ansible.builtin.copy:
         src: ./telegraf-1.2.0.i386-test.rpm
         dest: /mnt/flash
-        owner: admin
+        owner: root
         group: eosadmin
         mode: 0644
