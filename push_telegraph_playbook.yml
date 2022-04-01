@@ -1,16 +1,8 @@
 ---
 - hosts: all
   gather_facts: false
-  connection: local
 
   tasks:
-
-    - name: Checking the user name
-      shell: /usr/bin/whoami
-      register: username
-  
-    - name: Debugging the whoami username
-      debug: msg={{ username }}
 
     - name: Push RPM Telegraph Package on Arista
       ansible.builtin.copy:
