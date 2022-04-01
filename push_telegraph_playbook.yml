@@ -23,5 +23,4 @@
     - name: Install Telegraf RPM
       arista.eos.eos_command:
         commands:
-        - bash sudo su 
-        - /mnt/flash/installtelegraf.sh
+        - show version
