@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  connection: network_cli
+  ansible_connection: ansible.netcommon.network_cli
   gather_facts: false
   collections:
     - ansible.netcommon
