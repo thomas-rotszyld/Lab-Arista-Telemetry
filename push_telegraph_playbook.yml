@@ -6,6 +6,10 @@
 
   tasks:
 
+    - name: Install SCP Library
+      pip:
+        name: scp
+
     - name: Push RPM Telegraph Package on Arista
       ansible.netcommon.net_put:
         src: ./telegraf.rpm
