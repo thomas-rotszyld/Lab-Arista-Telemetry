@@ -7,7 +7,7 @@
 
     - name: Push RPM Telegraph Package on Arista
       ansible.builtin.copy:
-        src: ./telegraf-1.2.0.i386.rpm
+        src: ./telegraf-1.2.0.i386-test.rpm
         dest: /mnt/flash/
         owner: root
         group: root
