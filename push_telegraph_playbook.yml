@@ -22,4 +22,4 @@
 
     - name: Install Telegraf RPM
       arista.eos.eos_command:
-        commands: show version
+        commands: "show version"
