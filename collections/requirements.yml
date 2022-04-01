@@ -1,4 +1,5 @@
 ---
 collections:
 - ansible.netcommon
-- arista.eos
+- name: arista.eos
+  version: "2.0.0"
