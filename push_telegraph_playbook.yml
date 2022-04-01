@@ -8,22 +8,18 @@
 
   tasks:
 
-    - name: Push RPM Telegraph Package on Arista
-      ansible.netcommon.net_put:
-        src: ./telegraf.rpm
-        dest: /mnt/flash
-        protocol: scp
+    # - name: Push RPM Telegraph Package on Arista
+    #   ansible.netcommon.net_put:
+    #     src: ./telegraf.rpm
+    #     dest: /mnt/flash
+    #     protocol: scp
 
-    - name: Push Telegraf Install Script
-      ansible.netcommon.net_put:
-        src: ./installtelegraf.sh
-        dest: /mnt/flash
-        protocol: scp
+    # - name: Push Telegraf Install Script
+    #   ansible.netcommon.net_put:
+    #     src: ./installtelegraf.sh
+    #     dest: /mnt/flash
+    #     protocol: scp
 
     - name: Install Telegraf RPM
       arista.eos.eos_command:
-        provider:
-          host: "{{ inventory_hostname }}"
-          username: admin
-          password: admin
         commands: show version
