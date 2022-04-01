@@ -1,11 +1,14 @@
 ---
 - hosts: all
+  connection: network_cli
   gather_facts: false
+  collections:
+    - ansible.netcommon
 
   tasks:
 
     - name: Push RPM Telegraph Package on Arista
-      ansible.builtin.copy:
+      ansible.netcommon.net_put:
         src: ./telegraf.rpm
         dest: /mnt/flash
-        mode: 0644
+        protocol: scp
