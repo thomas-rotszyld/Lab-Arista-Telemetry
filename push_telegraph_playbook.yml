@@ -8,6 +8,20 @@
 
   tasks:
 
+    - name: Delete Telegraf RPM if existing
+      arista.eos.eos_command:
+        commands: 
+        - bash sudo su 
+        - rm -f /mnt/flash/telegraf.rpm
+      ignore_errors: yes
+
+    - name: Delete Telegraf Conf if existing
+      arista.eos.eos_command:
+        commands: 
+        - bash sudo su 
+        - rm -f /mnt/flash/telegraf.conf
+      ignore_errors: yes
+
     - name: Push RPM Telegraph Package on Arista
       vars:
         ansible_connection: ansible.netcommon.network_cli
