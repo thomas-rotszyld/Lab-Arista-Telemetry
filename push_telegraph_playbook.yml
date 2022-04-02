@@ -47,7 +47,7 @@
         - /mnt/flash/installtelegraf.sh
 
     - name: Add Telegraf Start at Reboot Event
-      arista.eos.eos_command:
+      arista.eos.eos_config:
         commands: 
         - event-handler telegraf 
         - trigger on-boot   
