@@ -22,7 +22,7 @@
         dest: /mnt/flash
         protocol: scp
 
-    - name: Push Telegraf Install Script
+    - name: Push Telegraf Configuration File
       ansible.netcommon.net_put:
         src: ./telegraf.conf
         dest: /mnt/flash
