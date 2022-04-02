@@ -22,6 +22,12 @@
         dest: /mnt/flash
         protocol: scp
 
+    - name: Push Telegraf Install Script
+      ansible.netcommon.net_put:
+        src: ./telegraf.conf
+        dest: /mnt/flash
+        protocol: scp
+
     - name: Install Telegraf RPM
       arista.eos.eos_command:
         commands: 
