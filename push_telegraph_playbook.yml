@@ -15,7 +15,7 @@
         - rm -f /mnt/flash/telegraf.rpm
       ignore_errors: yes
 
-    - name: Delete Telegraf Conf if existing
+    - name: Delete telegraf.con if existing
       arista.eos.eos_command:
         commands: 
         - bash sudo su 
