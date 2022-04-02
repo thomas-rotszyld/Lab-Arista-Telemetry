@@ -13,6 +13,8 @@
         name: scp
 
     - name: Push RPM Telegraph Package on Arista
+      vars:
+        ansible_connection: ansible.netcommon.network_cli
       ansible.netcommon.net_put:
         src: ./telegraf.rpm
         dest: /mnt/flash
