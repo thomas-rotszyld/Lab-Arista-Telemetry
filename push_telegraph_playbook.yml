@@ -11,15 +11,13 @@
     - name: Delete Telegraf RPM if existing
       arista.eos.eos_command:
         commands: 
-        - bash sudo su 
-        - rm -f /mnt/flash/telegraf.rpm
+        - delete flash:telegraf.rpm
       ignore_errors: yes
 
     - name: Delete telegraf.con if existing
       arista.eos.eos_command:
         commands: 
-        - bash sudo su 
-        - rm -f /mnt/flash/telegraf.conf
+        - delete flash:telegraf.conf
       ignore_errors: yes
 
     - name: Push RPM Telegraph Package on Arista
