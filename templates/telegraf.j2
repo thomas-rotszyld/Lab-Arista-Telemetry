@@ -46,7 +46,7 @@
 
 [[outputs.influxdb_v2]]
   urls = ["http://10.0.137.51:8086"]
-  token = "HRzI2anhGF3gzEAxi2YEOPiXnegDVL6uOCAcLZnysH_udD6HGGrFYKRWGGq76GYCsfFLOlNJaX79gaqzdCy1rw=="
+  token = "{{ lookup('env','INFLUXDB_TOKEN') }}"
   organization = "PNETLAB"
   bucket = "LAB"
 
