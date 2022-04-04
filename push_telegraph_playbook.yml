@@ -33,16 +33,16 @@
         src: ./templates/telegraf.j2
         dest: /tmp/telegraf.conf
 
-    - name: Push Telegraf Install Script
+    - name: Push Telegraf Configuration File
       ansible.netcommon.net_put:
         src: /tmp/telegraf.conf
         dest: /mnt/flash/
         protocol: scp
 
-    - name: Push Telegraf Configuration File
+    - name: Push Telegraf Install Script
       ansible.netcommon.net_put:
-        src: ./telegraf.conf
-        dest: /mnt/flash
+        src: ./installtelegraf.sh
+        dest: /mnt/flash/
         protocol: scp
 
     - name: Add Telegraf Start at Reboot Event
