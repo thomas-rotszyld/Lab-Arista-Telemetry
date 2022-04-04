@@ -73,10 +73,13 @@
     
     - name: Add Telegraf Start at Reboot Event
       arista.eos.eos_config:
-        commands: 
-        - event-handler telegraf 
+        lines: 
         - trigger on-boot   
         - action bash /mnt/flash/./installtelegraf.sh
+        parents: event-handler telegraf 
+        before: no event-handler telegraf
+        replace: block
+
 
     - name: Install Telegraf RPM
       arista.eos.eos_command:
