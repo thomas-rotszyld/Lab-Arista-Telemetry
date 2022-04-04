@@ -11,6 +11,7 @@
         name: "dummy"
         user: "{{ansible_user}}"
         pwd: "{{ansible_password}}"
+        group: dummy
 
     - name: show stored machine credentials
       debug:
@@ -20,7 +21,7 @@
       debug:
         msg: "Username = {{ ansible_user }} Password = {{ ansible_password }}"
 
-- hosts: all
+- hosts: veos
   gather_facts: false
   connection: local
   collections:
