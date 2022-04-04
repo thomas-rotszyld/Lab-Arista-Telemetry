@@ -68,7 +68,7 @@
       arista.eos.eos_config:
         lines: 
         - trigger on-boot   
-        - action bash /mnt/flash/./installtelegraf.sh
+        - action bash /mnt/flash/installtelegraf.sh
         parents: event-handler telegraf 
         before: no event-handler telegraf
         replace: block
