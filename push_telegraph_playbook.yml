@@ -3,7 +3,9 @@
   gather_facts: no
 
   tasks:
-
+    #when using connection: local it will switch to user "awx" (when using awx/tower)
+    #create dummy host without connection local to cache machine credentials
+    #used afterward to generate telegraf.conf
     - name: add dummy host
       add_host:
         name: "dummy"
@@ -26,13 +28,6 @@
     - arista.eos
 
   tasks:
-
-    - name: Add Telegraf Start at Reboot Event
-      arista.eos.eos_config:
-        commands: 
-        - event-handler telegraf 
-        - trigger on-boot   
-        - action bash /mnt/flash/./installtelegraf.sh
 
     - name: Delete Telegraf RPM if existing
       arista.eos.eos_command:
@@ -83,6 +78,13 @@
         commands: 
         - copy running-config startup-config
     
+    - name: Add Telegraf Start at Reboot Event
+      arista.eos.eos_config:
+        commands: 
+        - event-handler telegraf 
+        - trigger on-boot   
+        - action bash /mnt/flash/./installtelegraf.sh
+
     - name: Install Telegraf RPM
       arista.eos.eos_command:
         commands: 
