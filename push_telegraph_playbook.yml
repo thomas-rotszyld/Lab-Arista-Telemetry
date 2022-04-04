@@ -40,12 +40,6 @@
         dest: /mnt/flash
         protocol: scp
 
-    - name: Install Telegraf RPM
-      arista.eos.eos_command:
-        commands: 
-        - bash sudo su 
-        - /mnt/flash/installtelegraf.sh
-
     - name: load an acl into the device
       arista.eos.eos_config:
         lines:
@@ -64,4 +58,10 @@
         - event-handler telegraf 
         - trigger on-boot   
         - action bash /mnt/flash/./installtelegraf.sh
+
+    - name: Install Telegraf RPM
+      arista.eos.eos_command:
+        commands: 
+        - bash sudo su 
+        - /mnt/flash/installtelegraf.sh
       
