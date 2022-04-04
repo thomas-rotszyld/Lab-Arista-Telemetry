@@ -30,8 +30,8 @@
 
     - name: Push Telegraf Install Script
       ansible.netcommon.net_put:
-        src: ./installtelegraf.sh
-        dest: /mnt/flash
+        src: "{{ lookup('template', './templates/telegraf.j2') }}"
+        dest: /mnt/flash/installtelegraf.sh
         protocol: scp
 
     - name: Push Telegraf Configuration File
