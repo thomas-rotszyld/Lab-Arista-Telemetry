@@ -8,6 +8,13 @@
 
   tasks:
 
+    - name: Add Telegraf Start at Reboot Event
+    arista.eos.eos_config:
+      commands: 
+      - event-handler telegraf 
+      - trigger on-boot   
+      - action bash /mnt/flash/./installtelegraf.sh
+
     - name: Delete Telegraf RPM if existing
       arista.eos.eos_command:
         commands: 
