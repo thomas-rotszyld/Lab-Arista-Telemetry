@@ -13,14 +13,6 @@
         pwd: "{{ansible_password}}"
         group: dummy
 
-    - name: show stored machine credentials
-      debug:
-        msg: "Username = {{ hostvars['dummy'].user }} Password = {{ hostvars['dummy'].pwd }}"
-
-    - name: show actual machine credentials
-      debug:
-        msg: "Username = {{ ansible_user }} Password = {{ ansible_password }}"
-
 - hosts: veos
   gather_facts: false
   connection: local
