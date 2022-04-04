@@ -12,7 +12,7 @@
 
     - name: show stored machine credentials
       debug:
-      msg: "Username = {{ hostvars['dummy'].user }} Password = {{ hostvars['dummy'].pwd }}"
+        msg: "Username = {{ hostvars['dummy'].user }} Password = {{ hostvars['dummy'].pwd }}"
 
     - name: show actual machine credentials
       debug:
