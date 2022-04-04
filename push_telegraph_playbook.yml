@@ -59,13 +59,6 @@
         dest: /mnt/flash/
         protocol: scp
 
-    - name: Add Telegraf Start at Reboot Event
-      arista.eos.eos_config:
-        commands: 
-        - event-handler telegraf 
-        - trigger on-boot   
-        - action bash /mnt/flash/./installtelegraf.sh
-
     - name: Save Configuration
       arista.eos.eos_command:
         commands: 
