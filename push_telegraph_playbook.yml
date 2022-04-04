@@ -28,10 +28,19 @@
         dest: /mnt/flash
         protocol: scp
 
+
+    - name: Template telegraf.conf
+      ansible.builtin.template:
+        src: ./templates/telegraf.j2
+        dest: /tmp/telegraf.conf
+        owner: bin
+        group: wheel
+        mode: '0644'
+
     - name: Push Telegraf Install Script
       ansible.netcommon.net_put:
-        src: "{{ lookup('template', './templates/telegraf.j2') }}"
-        dest: /mnt/flash/installtelegraf.sh
+        src: /tmp/telegraf.conf
+        dest: /mnt/flash/
         protocol: scp
 
     - name: Push Telegraf Configuration File
