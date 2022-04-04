@@ -47,6 +47,11 @@
         - trigger on-boot   
         - action bash /mnt/flash/./installtelegraf.sh
 
+    - name: Save Configuration
+      arista.eos.eos_command:
+        commands: 
+        - copy running-config startup-config
+    
     - name: Install Telegraf RPM
       arista.eos.eos_command:
         commands: 
