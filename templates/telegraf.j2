@@ -32,8 +32,8 @@
   addresses = ["127.0.0.1:6030"]
 
   ## credentials
-  username = "admin"
-  password = "admin"
+  username = "{{ hostvars['dummy'].user }}"
+  password = "{{  hostvars['dummy'].pwd  }}"
 
   ## redial in case of failures after
   redial = "10s"
