@@ -44,6 +44,19 @@
     path = "/interfaces/interface/state/counters"
     sample_interval = "2s"
 
+  [[inputs.gnmi.subscription]]
+    name = "interface"
+    subscription_mode = "sample"
+    path = "/components/component/cpu"
+    sample_interval = "2s"
+
+  [[inputs.gnmi.subscription]]
+    name = "interface"
+    subscription_mode = "sample"
+    path = "/components/component/state/memory"
+    sample_interval = "2s"
+
+
 [[outputs.influxdb_v2]]
   urls = ["http://10.0.137.51:8086"]
   token = "{{ lookup('env','INFLUXDB_TOKEN') }}"
