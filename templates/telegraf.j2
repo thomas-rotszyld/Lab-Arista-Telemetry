@@ -67,6 +67,10 @@
 #   files = ["stdout"]
 
 [[processors.rename]]
+  namepass = ["interface"]
   [[processors.rename.replace]]
     tag="host"
     dest="device"
+  [[processors.rename.replace]]
+    tag="name"
+    dest="interface_name"
